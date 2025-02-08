@@ -36,6 +36,7 @@ void	execute_program(char *argv_cmd, char *path, char **env)
 	child_argv[0] = cmd;
 	if (execve(cmd, child_argv, env) == -1)
 		clear_split(child_argv);
+	exit (1);
 }
 
 void	child_process(char **argv, char *path, int *p, char **env)
