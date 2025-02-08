@@ -32,6 +32,7 @@ void	execute_program(char *argv_cmd, char *path, char **env)
 		perror(child_argv[0]);
 		exit(EXIT_FAILURE);
 	}
+	free(child_argv[0]);
 	child_argv[0] = cmd;
 	if (execve(cmd, child_argv, env) == -1)
 		clear_split(child_argv);
